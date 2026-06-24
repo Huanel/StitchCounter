@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		481E3CEF2FEB33F10029580E /* StitchCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CEE2FEB33F10029580E /* StitchCounterTests.swift */; };
 		481E3CF92FEB33F10029580E /* StitchCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CF82FEB33F10029580E /* StitchCounterUITests.swift */; };
 		481E3CFB2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CFA2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift */; };
+		48E6CF032FEB8853008A3CC6 /* Stitch Counter Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 48E6CEF92FEB8853008A3CC6 /* Stitch Counter Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +32,28 @@
 			remoteGlobalIDString = 481E3CD92FEB33EE0029580E;
 			remoteInfo = StitchCounter;
 		};
+		48E6CF012FEB8853008A3CC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 481E3CD22FEB33EE0029580E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48E6CEF82FEB8853008A3CC6;
+			remoteInfo = "Stitch Counter Watch App";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		48A0000E2FEB50000029580E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				48E6CF032FEB8853008A3CC6 /* Stitch Counter Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		481E3CDA2FEB33EE0029580E /* StitchCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StitchCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,7 +66,12 @@
 		481E3CF42FEB33F10029580E /* StitchCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StitchCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		481E3CF82FEB33F10029580E /* StitchCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchCounterUITests.swift; sourceTree = "<group>"; };
 		481E3CFA2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchCounterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48E6CEF92FEB8853008A3CC6 /* Stitch Counter Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stitch Counter Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		48E6CEFA2FEB8853008A3CC6 /* Stitch Counter Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Stitch Counter Watch App"; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		481E3CD72FEB33EE0029580E /* Frameworks */ = {
@@ -68,6 +95,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48E6CEF62FEB8853008A3CC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -77,6 +111,7 @@
 				481E3CDC2FEB33EE0029580E /* StitchCounter */,
 				481E3CED2FEB33F10029580E /* StitchCounterTests */,
 				481E3CF72FEB33F10029580E /* StitchCounterUITests */,
+				48E6CEFA2FEB8853008A3CC6 /* Stitch Counter Watch App */,
 				481E3CDB2FEB33EE0029580E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,6 +122,7 @@
 				481E3CDA2FEB33EE0029580E /* StitchCounter.app */,
 				481E3CEA2FEB33F10029580E /* StitchCounterTests.xctest */,
 				481E3CF42FEB33F10029580E /* StitchCounterUITests.xctest */,
+				48E6CEF92FEB8853008A3CC6 /* Stitch Counter Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,10 +173,12 @@
 				481E3CD62FEB33EE0029580E /* Sources */,
 				481E3CD72FEB33EE0029580E /* Frameworks */,
 				481E3CD82FEB33EE0029580E /* Resources */,
+				48A0000E2FEB50000029580E /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				48E6CF022FEB8853008A3CC6 /* PBXTargetDependency */,
 			);
 			name = StitchCounter;
 			productName = StitchCounter;
@@ -183,6 +221,28 @@
 			productReference = 481E3CF42FEB33F10029580E /* StitchCounterUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		48E6CEF82FEB8853008A3CC6 /* Stitch Counter Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48E6CF042FEB8853008A3CC6 /* Build configuration list for PBXNativeTarget "Stitch Counter Watch App" */;
+			buildPhases = (
+				48E6CEF52FEB8853008A3CC6 /* Sources */,
+				48E6CEF62FEB8853008A3CC6 /* Frameworks */,
+				48E6CEF72FEB8853008A3CC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				48E6CEFA2FEB8853008A3CC6 /* Stitch Counter Watch App */,
+			);
+			name = "Stitch Counter Watch App";
+			packageProductDependencies = (
+			);
+			productName = "Stitch Counter Watch App";
+			productReference = 48E6CEF92FEB8853008A3CC6 /* Stitch Counter Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -190,8 +250,8 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					481E3CD92FEB33EE0029580E = {
 						CreatedOnToolsVersion = 14.2;
@@ -203,6 +263,9 @@
 					481E3CF32FEB33F10029580E = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 481E3CD92FEB33EE0029580E;
+					};
+					48E6CEF82FEB8853008A3CC6 = {
+						CreatedOnToolsVersion = 26.5;
 					};
 				};
 			};
@@ -222,6 +285,7 @@
 				481E3CD92FEB33EE0029580E /* StitchCounter */,
 				481E3CE92FEB33F10029580E /* StitchCounterTests */,
 				481E3CF32FEB33F10029580E /* StitchCounterUITests */,
+				48E6CEF82FEB8853008A3CC6 /* Stitch Counter Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -244,6 +308,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		481E3CF22FEB33F10029580E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48E6CEF72FEB8853008A3CC6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,6 +350,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48E6CEF52FEB8853008A3CC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -291,6 +369,11 @@
 			isa = PBXTargetDependency;
 			target = 481E3CD92FEB33EE0029580E /* StitchCounter */;
 			targetProxy = 481E3CF52FEB33F10029580E /* PBXContainerItemProxy */;
+		};
+		48E6CF022FEB8853008A3CC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48E6CEF82FEB8853008A3CC6 /* Stitch Counter Watch App */;
+			targetProxy = 48E6CF012FEB8853008A3CC6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -329,8 +412,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3YAFLBZLJM;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -350,6 +435,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -389,8 +475,10 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3YAFLBZLJM;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -403,6 +491,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -414,10 +503,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StitchCounter/Preview Content\"";
-				DEVELOPMENT_TEAM = 3YAFLBZLJM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -425,6 +514,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -443,10 +533,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StitchCounter/Preview Content\"";
-				DEVELOPMENT_TEAM = 3YAFLBZLJM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -454,6 +544,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,11 +561,9 @@
 		481E3D022FEB33F10029580E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3YAFLBZLJM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
@@ -490,11 +579,9 @@
 		481E3D032FEB33F10029580E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3YAFLBZLJM;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
@@ -510,10 +597,8 @@
 		481E3D052FEB33F10029580E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3YAFLBZLJM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mar.StitchCounterUITests;
@@ -528,10 +613,8 @@
 		481E3D062FEB33F10029580E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3YAFLBZLJM;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mar.StitchCounterUITests;
@@ -540,6 +623,79 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = StitchCounter;
+			};
+			name = Release;
+		};
+		48E6CF052FEB8853008A3CC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Stitch Counter";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.mar.StitchCounter;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mar.StitchCounter.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		48E6CF062FEB8853008A3CC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Stitch Counter";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.mar.StitchCounter;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mar.StitchCounter.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
 		};
@@ -578,6 +734,15 @@
 			buildConfigurations = (
 				481E3D052FEB33F10029580E /* Debug */,
 				481E3D062FEB33F10029580E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48E6CF042FEB8853008A3CC6 /* Build configuration list for PBXNativeTarget "Stitch Counter Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48E6CF052FEB8853008A3CC6 /* Debug */,
+				48E6CF062FEB8853008A3CC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
