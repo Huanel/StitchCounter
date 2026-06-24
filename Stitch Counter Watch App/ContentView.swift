@@ -9,7 +9,18 @@ struct ContentView: View {
             WatchCounterView(title: "Vueltas", value: $rowCount, tint: .pink)
             WatchCounterView(title: "Puntos", value: $stitchCount, tint: .green)
         }
-        .tabViewStyle(.verticalPage)
+        .watchPageStyleIfAvailable()
+    }
+}
+
+private extension View {
+    @ViewBuilder
+    func watchPageStyleIfAvailable() -> some View {
+        if #available(watchOS 10.0, *) {
+            tabViewStyle(.verticalPage)
+        } else {
+            self
+        }
     }
 }
 

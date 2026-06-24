@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		481E3CEF2FEB33F10029580E /* StitchCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CEE2FEB33F10029580E /* StitchCounterTests.swift */; };
 		481E3CF92FEB33F10029580E /* StitchCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CF82FEB33F10029580E /* StitchCounterUITests.swift */; };
 		481E3CFB2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CFA2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift */; };
+		48E6CEF02FEB8853008A3CC6 /* Stitch_CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E6CEEB2FEB8853008A3CC6 /* Stitch_CounterApp.swift */; };
+		48E6CEF12FEB8853008A3CC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E6CEEC2FEB8853008A3CC6 /* ContentView.swift */; };
+		48E6CEF22FEB8853008A3CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48E6CEED2FEB8853008A3CC6 /* Assets.xcassets */; };
 		48E6CF032FEB8853008A3CC6 /* Stitch Counter Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 48E6CEF92FEB8853008A3CC6 /* Stitch Counter Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -66,12 +69,11 @@
 		481E3CF42FEB33F10029580E /* StitchCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StitchCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		481E3CF82FEB33F10029580E /* StitchCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchCounterUITests.swift; sourceTree = "<group>"; };
 		481E3CFA2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchCounterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48E6CEEB2FEB8853008A3CC6 /* Stitch_CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stitch_CounterApp.swift; sourceTree = "<group>"; };
+		48E6CEEC2FEB8853008A3CC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		48E6CEED2FEB8853008A3CC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48E6CEF92FEB8853008A3CC6 /* Stitch Counter Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stitch Counter Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		48E6CEFA2FEB8853008A3CC6 /* Stitch Counter Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Stitch Counter Watch App"; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		481E3CD72FEB33EE0029580E /* Frameworks */ = {
@@ -163,6 +165,16 @@
 			path = StitchCounterUITests;
 			sourceTree = "<group>";
 		};
+		48E6CEFA2FEB8853008A3CC6 /* Stitch Counter Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				48E6CEEB2FEB8853008A3CC6 /* Stitch_CounterApp.swift */,
+				48E6CEEC2FEB8853008A3CC6 /* ContentView.swift */,
+				48E6CEED2FEB8853008A3CC6 /* Assets.xcassets */,
+			);
+			path = "Stitch Counter Watch App";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,9 +245,6 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				48E6CEFA2FEB8853008A3CC6 /* Stitch Counter Watch App */,
-			);
 			name = "Stitch Counter Watch App";
 			packageProductDependencies = (
 			);
@@ -278,6 +287,8 @@
 				Base,
 			);
 			mainGroup = 481E3CD12FEB33EE0029580E;
+			packageReferences = (
+			);
 			productRefGroup = 481E3CDB2FEB33EE0029580E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -318,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48E6CEF22FEB8853008A3CC6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48E6CEF12FEB8853008A3CC6 /* ContentView.swift in Sources */,
+				48E6CEF02FEB8853008A3CC6 /* Stitch_CounterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +521,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StitchCounter/Preview Content\"";
+				DEVELOPMENT_TEAM = 3YAFLBZLJM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -514,7 +529,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -537,6 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StitchCounter/Preview Content\"";
+				DEVELOPMENT_TEAM = 3YAFLBZLJM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -544,7 +560,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -639,8 +655,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Stitch Counter";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKApplication = YES;
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.mar.StitchCounter;
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -659,7 +676,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -676,8 +693,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Stitch Counter";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKApplication = YES;
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.mar.StitchCounter;
-				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = NO;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -695,7 +713,7 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+				WATCHOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
