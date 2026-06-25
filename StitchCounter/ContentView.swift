@@ -13,7 +13,7 @@ struct ContentView: View {
 
             VStack(spacing: 24) {
                 VStack(spacing: 6) {
-                    Text("Stitch Counter")
+                    Text("StitchCounter")
                         .font(.system(size: 34, weight: .bold, design: .rounded))
                         .foregroundColor(StitchColors.text)
 
