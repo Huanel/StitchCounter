@@ -14,6 +14,10 @@
 		481E3CEF2FEB33F10029580E /* StitchCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CEE2FEB33F10029580E /* StitchCounterTests.swift */; };
 		481E3CF92FEB33F10029580E /* StitchCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CF82FEB33F10029580E /* StitchCounterUITests.swift */; };
 		481E3CFB2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CFA2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift */; };
+		48B100022FEBF0000029580E /* StitchProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100012FEBF0000029580E /* StitchProject.swift */; };
+		48B100042FEBF0000029580E /* ProjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100032FEBF0000029580E /* ProjectStore.swift */; };
+		48B100062FEBF0000029580E /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100052FEBF0000029580E /* ProjectListView.swift */; };
+		48B100082FEBF0000029580E /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100072FEBF0000029580E /* ProjectDetailView.swift */; };
 		48E6CEF02FEB8853008A3CC6 /* Stitch_CounterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E6CEEB2FEB8853008A3CC6 /* Stitch_CounterApp.swift */; };
 		48E6CEF12FEB8853008A3CC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E6CEEC2FEB8853008A3CC6 /* ContentView.swift */; };
 		48E6CEF22FEB8853008A3CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48E6CEED2FEB8853008A3CC6 /* Assets.xcassets */; };
@@ -69,6 +73,10 @@
 		481E3CF42FEB33F10029580E /* StitchCounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StitchCounterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		481E3CF82FEB33F10029580E /* StitchCounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchCounterUITests.swift; sourceTree = "<group>"; };
 		481E3CFA2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchCounterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48B100012FEBF0000029580E /* StitchProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchProject.swift; sourceTree = "<group>"; };
+		48B100032FEBF0000029580E /* ProjectStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStore.swift; sourceTree = "<group>"; };
+		48B100052FEBF0000029580E /* ProjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListView.swift; sourceTree = "<group>"; };
+		48B100072FEBF0000029580E /* ProjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailView.swift; sourceTree = "<group>"; };
 		48E6CEEB2FEB8853008A3CC6 /* Stitch_CounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stitch_CounterApp.swift; sourceTree = "<group>"; };
 		48E6CEEC2FEB8853008A3CC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		48E6CEED2FEB8853008A3CC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,6 +142,10 @@
 			children = (
 				481E3CDD2FEB33EE0029580E /* StitchCounterApp.swift */,
 				481E3CDF2FEB33EE0029580E /* ContentView.swift */,
+				48B100012FEBF0000029580E /* StitchProject.swift */,
+				48B100032FEBF0000029580E /* ProjectStore.swift */,
+				48B100052FEBF0000029580E /* ProjectListView.swift */,
+				48B100072FEBF0000029580E /* ProjectDetailView.swift */,
 				481E3CE12FEB33F10029580E /* Assets.xcassets */,
 				481E3CE32FEB33F10029580E /* Preview Content */,
 			);
@@ -340,8 +352,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48B100082FEBF0000029580E /* ProjectDetailView.swift in Sources */,
+				48B100042FEBF0000029580E /* ProjectStore.swift in Sources */,
 				481E3CE02FEB33EE0029580E /* ContentView.swift in Sources */,
+				48B100062FEBF0000029580E /* ProjectListView.swift in Sources */,
 				481E3CDE2FEB33EE0029580E /* StitchCounterApp.swift in Sources */,
+				48B100022FEBF0000029580E /* StitchProject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
