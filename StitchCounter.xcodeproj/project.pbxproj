@@ -63,7 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		481E3CDA2FEB33EE0029580E /* StitchCounter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StitchCounter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		481E3CDA2FEB33EE0029580E /* Row & Stitch Counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Row & Stitch Counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		481E3CDD2FEB33EE0029580E /* StitchCounterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchCounterApp.swift; sourceTree = "<group>"; };
 		481E3CDF2FEB33EE0029580E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		481E3CE12FEB33F10029580E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		481E3CDB2FEB33EE0029580E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				481E3CDA2FEB33EE0029580E /* StitchCounter.app */,
+				481E3CDA2FEB33EE0029580E /* Row & Stitch Counter.app */,
 				481E3CEA2FEB33F10029580E /* StitchCounterTests.xctest */,
 				481E3CF42FEB33F10029580E /* StitchCounterUITests.xctest */,
 				48E6CEF92FEB8853008A3CC6 /* StitchCounterWatchApp.app */,
@@ -206,7 +206,7 @@
 			);
 			name = StitchCounter;
 			productName = StitchCounter;
-			productReference = 481E3CDA2FEB33EE0029580E /* StitchCounter.app */;
+			productReference = 481E3CDA2FEB33EE0029580E /* Row & Stitch Counter.app */;
 			productType = "com.apple.product-type.application";
 		};
 		481E3CE92FEB33F10029580E /* StitchCounterTests */ = {
@@ -272,7 +272,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2650;
-				LastUpgradeCheck = 2650;
+				LastUpgradeCheck = 2660;
 				TargetAttributes = {
 					481E3CD92FEB33EE0029580E = {
 						CreatedOnToolsVersion = 14.2;
@@ -412,6 +412,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -475,6 +476,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -552,7 +554,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mar.StitchCounter;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Row & Stitch Counter";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -583,7 +585,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mar.StitchCounter;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Row & Stitch Counter";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

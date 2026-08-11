@@ -1424,7 +1424,7 @@ function createStyles(colors: Palette) {
       gap: 18,
       paddingBottom: 112,
       paddingHorizontal: 18,
-      paddingTop: 12,
+      paddingTop: 30,
     },
     simpleScreenContent: {
       flexGrow: 1,
