@@ -22,6 +22,13 @@
 		48E6CEF12FEB8853008A3CC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E6CEEC2FEB8853008A3CC6 /* ContentView.swift */; };
 		48E6CEF22FEB8853008A3CC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48E6CEED2FEB8853008A3CC6 /* Assets.xcassets */; };
 		48E6CF032FEB8853008A3CC6 /* StitchCounterWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 48E6CEF92FEB8853008A3CC6 /* StitchCounterWatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		48C0AB012FEC0100002958AA /* ProjectSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA012FEC0100002958AA /* ProjectSync.swift */; };
+		48C0AB032FEC0100002958AA /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA032FEC0100002958AA /* Haptics.swift */; };
+		48C0AB022FEC0100002958AA /* WatchSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA022FEC0100002958AA /* WatchSyncService.swift */; };
+		48C0AC012FEC0100002958AA /* StitchProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100012FEBF0000029580E /* StitchProject.swift */; };
+		48C0AC022FEC0100002958AA /* ProjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100032FEBF0000029580E /* ProjectStore.swift */; };
+		48C0AC032FEC0100002958AA /* ProjectSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA012FEC0100002958AA /* ProjectSync.swift */; };
+		48C0AC042FEC0100002958AA /* WatchSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA022FEC0100002958AA /* WatchSyncService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +88,9 @@
 		48E6CEEC2FEB8853008A3CC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		48E6CEED2FEB8853008A3CC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48E6CEF92FEB8853008A3CC6 /* StitchCounterWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StitchCounterWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48C0AA012FEC0100002958AA /* ProjectSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSync.swift; sourceTree = "<group>"; };
+		48C0AA022FEC0100002958AA /* WatchSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSyncService.swift; sourceTree = "<group>"; };
+		48C0AA032FEC0100002958AA /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +128,7 @@
 		481E3CD12FEB33EE0029580E = {
 			isa = PBXGroup;
 			children = (
+				48C0AA002FEC0100002958AA /* Shared */,
 				481E3CDC2FEB33EE0029580E /* StitchCounter */,
 				481E3CED2FEB33F10029580E /* StitchCounterTests */,
 				481E3CF72FEB33F10029580E /* StitchCounterUITests */,
@@ -142,14 +153,24 @@
 			children = (
 				481E3CDD2FEB33EE0029580E /* StitchCounterApp.swift */,
 				481E3CDF2FEB33EE0029580E /* ContentView.swift */,
-				48B100012FEBF0000029580E /* StitchProject.swift */,
-				48B100032FEBF0000029580E /* ProjectStore.swift */,
 				48B100052FEBF0000029580E /* ProjectListView.swift */,
 				48B100072FEBF0000029580E /* ProjectDetailView.swift */,
+				48C0AA032FEC0100002958AA /* Haptics.swift */,
 				481E3CE12FEB33F10029580E /* Assets.xcassets */,
 				481E3CE32FEB33F10029580E /* Preview Content */,
 			);
 			path = StitchCounter;
+			sourceTree = "<group>";
+		};
+		48C0AA002FEC0100002958AA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				48B100012FEBF0000029580E /* StitchProject.swift */,
+				48B100032FEBF0000029580E /* ProjectStore.swift */,
+				48C0AA012FEC0100002958AA /* ProjectSync.swift */,
+				48C0AA022FEC0100002958AA /* WatchSyncService.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		481E3CE32FEB33F10029580E /* Preview Content */ = {
@@ -358,6 +379,9 @@
 				48B100062FEBF0000029580E /* ProjectListView.swift in Sources */,
 				481E3CDE2FEB33EE0029580E /* StitchCounterApp.swift in Sources */,
 				48B100022FEBF0000029580E /* StitchProject.swift in Sources */,
+				48C0AB012FEC0100002958AA /* ProjectSync.swift in Sources */,
+				48C0AB022FEC0100002958AA /* WatchSyncService.swift in Sources */,
+				48C0AB032FEC0100002958AA /* Haptics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +408,10 @@
 			files = (
 				48E6CEF12FEB8853008A3CC6 /* ContentView.swift in Sources */,
 				48E6CEF02FEB8853008A3CC6 /* Stitch_CounterApp.swift in Sources */,
+				48C0AC012FEC0100002958AA /* StitchProject.swift in Sources */,
+				48C0AC022FEC0100002958AA /* ProjectStore.swift in Sources */,
+				48C0AC032FEC0100002958AA /* ProjectSync.swift in Sources */,
+				48C0AC042FEC0100002958AA /* WatchSyncService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +563,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"StitchCounter/Preview Content\"";
 				DEVELOPMENT_TEAM = 3YAFLBZLJM;
 				ENABLE_PREVIEWS = YES;
@@ -566,7 +594,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"StitchCounter/Preview Content\"";
 				DEVELOPMENT_TEAM = 3YAFLBZLJM;
 				ENABLE_PREVIEWS = YES;
@@ -595,7 +623,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
@@ -613,7 +641,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
@@ -630,7 +658,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mar.StitchCounterUITests;
@@ -646,7 +674,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mar.StitchCounterUITests;
@@ -665,7 +693,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -703,7 +731,7 @@
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;

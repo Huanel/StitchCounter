@@ -28,6 +28,10 @@ struct ProjectListView: View {
             .navigationTitle("Proyectos")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    UndoButton()
+                }
+
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: addProject) {
                         Image(systemName: "plus")
@@ -44,6 +48,7 @@ struct ProjectListView: View {
                     message: Text("¿Querés borrar \"\(project.displayName)\" y su contador?"),
                     primaryButton: .destructive(Text("Borrar")) {
                         store.deleteProject(id: project.id)
+                        Haptics.completed()
                     },
                     secondaryButton: .cancel(Text("Cancelar"))
                 )

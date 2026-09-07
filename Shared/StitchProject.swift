@@ -11,6 +11,10 @@ struct StitchProject: Identifiable, Codable, Equatable {
     var stitchCounterName: String
     var rowCounterName: String
 
+    /// Momento de la última edición. Es lo que decide quién gana cuando el
+    /// reloj y el teléfono editaron el mismo proyecto sin verse.
+    var updatedAt: Date
+
     private enum CodingKeys: String, CodingKey {
         case id
         case name
@@ -18,6 +22,7 @@ struct StitchProject: Identifiable, Codable, Equatable {
         case rowCount
         case stitchCounterName
         case rowCounterName
+        case updatedAt
     }
 
     init(
@@ -26,7 +31,8 @@ struct StitchProject: Identifiable, Codable, Equatable {
         stitchCount: Int = 0,
         rowCount: Int = 0,
         stitchCounterName: String = StitchProject.defaultStitchCounterName,
-        rowCounterName: String = StitchProject.defaultRowCounterName
+        rowCounterName: String = StitchProject.defaultRowCounterName,
+        updatedAt: Date = Date()
     ) {
         self.id = id
         self.name = name
@@ -34,6 +40,7 @@ struct StitchProject: Identifiable, Codable, Equatable {
         self.rowCount = rowCount
         self.stitchCounterName = stitchCounterName
         self.rowCounterName = rowCounterName
+        self.updatedAt = updatedAt
     }
 
     init(from decoder: Decoder) throws {
@@ -51,6 +58,23 @@ struct StitchProject: Identifiable, Codable, Equatable {
             String.self,
             forKey: .rowCounterName
         ) ?? StitchProject.defaultRowCounterName
+
+        // Los proyectos guardados antes de la sincronización no tienen fecha.
+        // Se tratan como los más viejos posibles: la primera edición real,
+        // venga de donde venga, los pisa.
+        updatedAt = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
+            ?? .distantPast
+    }
+
+    /// Compara lo que el usuario ve, ignorando la fecha de edición. Sirve para
+    /// saber si dos versiones del mismo proyecto difieren de verdad.
+    func hasSameContent(as other: StitchProject) -> Bool {
+        id == other.id
+            && name == other.name
+            && stitchCount == other.stitchCount
+            && rowCount == other.rowCount
+            && stitchCounterName == other.stitchCounterName
+            && rowCounterName == other.rowCounterName
     }
 
     var displayName: String {
