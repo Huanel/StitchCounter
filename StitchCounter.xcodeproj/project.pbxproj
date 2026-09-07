@@ -14,6 +14,7 @@
 		481E3CEF2FEB33F10029580E /* StitchCounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CEE2FEB33F10029580E /* StitchCounterTests.swift */; };
 		481E3CF92FEB33F10029580E /* StitchCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CF82FEB33F10029580E /* StitchCounterUITests.swift */; };
 		481E3CFB2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CFA2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift */; };
+		48C0AD012FEC0100002958AA /* ScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA042FEC0100002958AA /* ScreenshotTests.swift */; };
 		48B100022FEBF0000029580E /* StitchProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100012FEBF0000029580E /* StitchProject.swift */; };
 		48B100042FEBF0000029580E /* ProjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100032FEBF0000029580E /* ProjectStore.swift */; };
 		48B100062FEBF0000029580E /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100052FEBF0000029580E /* ProjectListView.swift */; };
@@ -91,6 +92,7 @@
 		48C0AA012FEC0100002958AA /* ProjectSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSync.swift; sourceTree = "<group>"; };
 		48C0AA022FEC0100002958AA /* WatchSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSyncService.swift; sourceTree = "<group>"; };
 		48C0AA032FEC0100002958AA /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		48C0AA042FEC0100002958AA /* ScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			children = (
 				481E3CF82FEB33F10029580E /* StitchCounterUITests.swift */,
 				481E3CFA2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift */,
+				48C0AA042FEC0100002958AA /* ScreenshotTests.swift */,
 			);
 			path = StitchCounterUITests;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			files = (
 				481E3CFB2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift in Sources */,
 				481E3CF92FEB33F10029580E /* StitchCounterUITests.swift in Sources */,
+				48C0AD012FEC0100002958AA /* ScreenshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
