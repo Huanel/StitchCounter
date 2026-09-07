@@ -42,72 +42,93 @@ struct ProjectDetailView: View {
     }
 
     private func counterContent(for project: StitchProject) -> some View {
-        VStack(spacing: 24) {
-            VStack(spacing: 6) {
-                EditableName(
-                    placeholder: "Nombre del proyecto",
-                    value: project.name,
-                    autocapitalization: .words,
-                    commit: { store.updateName(for: projectID, name: $0) }
-                )
-                .font(.system(size: 34, weight: .bold, design: .rounded))
-                .foregroundColor(StitchColors.text)
-                .multilineTextAlignment(.center)
-                .accessibilityLabel("Nombre del proyecto")
+        GeometryReader { proxy in
+            let isLandscape = proxy.size.width > proxy.size.height
 
-                Text("Contador de puntos y vueltas")
-                    .font(.system(size: 17, weight: .medium, design: .rounded))
-                    .foregroundColor(StitchColors.secondaryText)
-            }
-            .padding(.top, 18)
+            // Apaisado pone los dos contadores lado a lado en vez de uno debajo
+            // del otro: tejiendo querés los dos a mano sin scrollear.
+            let counters = isLandscape
+                ? AnyLayout(HStackLayout(alignment: .top, spacing: 16))
+                : AnyLayout(VStackLayout(spacing: 18))
 
-            VStack(spacing: 18) {
-                CounterCard(
-                    title: project.rowCounterName,
-                    commitTitle: { store.updateRowCounterName(for: projectID, name: $0) },
-                    defaultTitle: StitchProject.defaultRowCounterName,
-                    value: project.rowCount,
-                    accentColor: StitchColors.dustyRose,
-                    minusAction: {
-                        withAnimation(.easeInOut(duration: 0.18)) {
-                            store.adjustRowCount(for: projectID, by: -1)
+            // El scroll casi nunca hace falta, pero evita que con texto grande
+            // o en una pantalla chica el segundo contador quede cortado.
+            ScrollView {
+                VStack(spacing: isLandscape ? 12 : 24) {
+                    VStack(spacing: 6) {
+                        EditableName(
+                            placeholder: "Nombre del proyecto",
+                            value: project.name,
+                            autocapitalization: .words,
+                            commit: { store.updateName(for: projectID, name: $0) }
+                        )
+                        .font(.system(
+                            size: isLandscape ? 24 : 34,
+                            weight: .bold,
+                            design: .rounded
+                        ))
+                        .foregroundColor(StitchColors.text)
+                        .multilineTextAlignment(.center)
+                        .accessibilityLabel("Nombre del proyecto")
+
+                        if !isLandscape {
+                            Text("Contador de puntos y vueltas")
+                                .font(.system(size: 17, weight: .medium, design: .rounded))
+                                .foregroundColor(StitchColors.secondaryText)
                         }
-                    },
-                    plusAction: {
-                        withAnimation(.easeInOut(duration: 0.18)) {
-                            store.adjustRowCount(for: projectID, by: 1)
-                        }
-                    },
-                    resetAction: {
-                        resetTarget = .rows
                     }
-                )
+                    .padding(.top, isLandscape ? 4 : 18)
 
-                CounterCard(
-                    title: project.stitchCounterName,
-                    commitTitle: { store.updateStitchCounterName(for: projectID, name: $0) },
-                    defaultTitle: StitchProject.defaultStitchCounterName,
-                    value: project.stitchCount,
-                    accentColor: StitchColors.sage,
-                    minusAction: {
-                        withAnimation(.easeInOut(duration: 0.18)) {
-                            store.adjustStitchCount(for: projectID, by: -1)
-                        }
-                    },
-                    plusAction: {
-                        withAnimation(.easeInOut(duration: 0.18)) {
-                            store.adjustStitchCount(for: projectID, by: 1)
-                        }
-                    },
-                    resetAction: {
-                        resetTarget = .stitches
+                    counters {
+                        CounterCard(
+                            title: project.rowCounterName,
+                            commitTitle: { store.updateRowCounterName(for: projectID, name: $0) },
+                            defaultTitle: StitchProject.defaultRowCounterName,
+                            value: project.rowCount,
+                            accentColor: StitchColors.dustyRose,
+                            isCompact: isLandscape,
+                            minusAction: {
+                                withAnimation(.easeInOut(duration: 0.18)) {
+                                    store.adjustRowCount(for: projectID, by: -1)
+                                }
+                            },
+                            plusAction: {
+                                withAnimation(.easeInOut(duration: 0.18)) {
+                                    store.adjustRowCount(for: projectID, by: 1)
+                                }
+                            },
+                            resetAction: {
+                                resetTarget = .rows
+                            }
+                        )
+
+                        CounterCard(
+                            title: project.stitchCounterName,
+                            commitTitle: { store.updateStitchCounterName(for: projectID, name: $0) },
+                            defaultTitle: StitchProject.defaultStitchCounterName,
+                            value: project.stitchCount,
+                            accentColor: StitchColors.sage,
+                            isCompact: isLandscape,
+                            minusAction: {
+                                withAnimation(.easeInOut(duration: 0.18)) {
+                                    store.adjustStitchCount(for: projectID, by: -1)
+                                }
+                            },
+                            plusAction: {
+                                withAnimation(.easeInOut(duration: 0.18)) {
+                                    store.adjustStitchCount(for: projectID, by: 1)
+                                }
+                            },
+                            resetAction: {
+                                resetTarget = .stitches
+                            }
+                        )
                     }
-                )
+                }
+                .padding(.horizontal, isLandscape ? 16 : 22)
+                .padding(.bottom, 16)
             }
-
-            Spacer(minLength: 12)
         }
-        .padding(.horizontal, 22)
     }
 
     private var missingProjectView: some View {
@@ -240,6 +261,9 @@ struct CounterCard: View {
     let defaultTitle: String
     let value: Int
     let accentColor: Color
+    /// Apaisado: la tarjeta comparte el ancho con la otra y hay menos alto, así
+    /// que encoge el número y los botones en vez de recortarse.
+    var isCompact: Bool = false
     let minusAction: () -> Void
     let plusAction: () -> Void
     let resetAction: () -> Void
@@ -250,7 +274,7 @@ struct CounterCard: View {
     }
 
     var body: some View {
-        VStack(spacing: 18) {
+        VStack(spacing: isCompact ? 12 : 18) {
             EditableName(
                 placeholder: defaultTitle,
                 value: title,
@@ -263,7 +287,7 @@ struct CounterCard: View {
             .accessibilityLabel("Nombre de \(defaultTitle.lowercased())")
 
             Text("\(value)")
-                .font(.system(size: 76, weight: .bold, design: .rounded))
+                .font(.system(size: isCompact ? 52 : 76, weight: .bold, design: .rounded))
                 .foregroundColor(StitchColors.text)
                 .minimumScaleFactor(0.55)
                 .lineLimit(1)
@@ -271,11 +295,12 @@ struct CounterCard: View {
                 .transition(.scale.combined(with: .opacity))
                 .accessibilityLabel("\(displayTitle): \(value)")
 
-            HStack(spacing: 22) {
+            HStack(spacing: isCompact ? 16 : 22) {
                 RoundCounterButton(
                     symbol: "-",
                     backgroundColor: StitchColors.lavender,
                     foregroundColor: StitchColors.text,
+                    diameter: isCompact ? 62 : 76,
                     // En cero el toque no cambia nada: hay que poder notar la
                     // diferencia entre "llegué al fondo" y "no registró".
                     isBlocked: value == 0,
@@ -287,6 +312,7 @@ struct CounterCard: View {
                     symbol: "+",
                     backgroundColor: accentColor,
                     foregroundColor: .white,
+                    diameter: isCompact ? 62 : 76,
                     action: plusAction
                 )
                 .accessibilityLabel("Sumar \(displayTitle.lowercased())")
@@ -304,7 +330,7 @@ struct CounterCard: View {
             .accessibilityLabel("Reiniciar \(displayTitle.lowercased())")
         }
         .frame(maxWidth: .infinity)
-        .padding(.vertical, 24)
+        .padding(.vertical, isCompact ? 16 : 24)
         .padding(.horizontal, 18)
         .background(StitchColors.card)
         .cornerRadius(28)
@@ -316,6 +342,7 @@ struct RoundCounterButton: View {
     let symbol: String
     let backgroundColor: Color
     let foregroundColor: Color
+    var diameter: CGFloat = 76
     var isBlocked: Bool = false
     let action: () -> Void
 
@@ -329,8 +356,8 @@ struct RoundCounterButton: View {
             action()
         } label: {
             Text(symbol)
-                .font(.system(size: 38, weight: .bold, design: .rounded))
-                .frame(width: 76, height: 76)
+                .font(.system(size: diameter * 0.5, weight: .bold, design: .rounded))
+                .frame(width: diameter, height: diameter)
                 .background(backgroundColor)
                 .foregroundColor(foregroundColor)
                 .clipShape(Circle())

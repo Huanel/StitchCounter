@@ -33,6 +33,18 @@ final class ScreenshotTests: XCTestCase {
         // Sumar una vuelta deja visible el botón de deshacer.
         plus.tap()
         capture(named: "03-deshacer")
+
+        // Apaisado: los dos contadores tienen que quedar lado a lado y enteros.
+        XCUIDevice.shared.orientation = .landscapeLeft
+        let bothVisible = app.buttons.matching(
+            NSPredicate(format: "label BEGINSWITH %@", "Sumar")
+        )
+        XCTAssertTrue(
+            bothVisible.element(boundBy: 1).waitForExistence(timeout: 10),
+            "en apaisado no se ven los dos contadores"
+        )
+        capture(named: "04-apaisado")
+        XCUIDevice.shared.orientation = .portrait
     }
 
     private func capture(named name: String) {
