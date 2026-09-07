@@ -18,23 +18,20 @@ final class ScreenshotTests: XCTestCase {
         capture(named: "01-lista")
 
         // La primera fila del listado; el nombre viene de los datos sembrados.
-        let firstProject = app.buttons.containing(
-            NSPredicate(format: "label CONTAINS %@", "Bufanda")
-        ).firstMatch
+        let firstProject = app.staticTexts["Bufanda de invierno"]
         XCTAssertTrue(firstProject.waitForExistence(timeout: 10), "no apareció el primer proyecto")
         firstProject.tap()
 
-        // El número lleva accessibilityLabel "Vueltas: 47", no "47" a secas.
-        let counter = app.staticTexts.matching(
-            NSPredicate(format: "label CONTAINS %@", "47")
+        // Se confirma con un control que solo existe dentro del contador: el
+        // listado también muestra "47", así que buscarlo no probaría nada.
+        let plus = app.buttons.matching(
+            NSPredicate(format: "label BEGINSWITH %@", "Sumar")
         ).firstMatch
-        XCTAssertTrue(counter.waitForExistence(timeout: 10), "no se abrió el contador")
+        XCTAssertTrue(plus.waitForExistence(timeout: 10), "no se abrió el contador")
         capture(named: "02-contador")
 
         // Sumar una vuelta deja visible el botón de deshacer.
-        app.buttons.matching(
-            NSPredicate(format: "label BEGINSWITH %@", "Sumar")
-        ).firstMatch.tap()
+        plus.tap()
         capture(named: "03-deshacer")
     }
 
