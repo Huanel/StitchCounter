@@ -11,19 +11,27 @@ struct ProjectListView: View {
                 StitchColors.background
                     .ignoresSafeArea()
 
-                VStack(spacing: 22) {
-                    header
+                GeometryReader { proxy in
+                    let isLandscape = proxy.size.width > proxy.size.height
 
-                    if store.projects.isEmpty {
-                        emptyState
-                    } else {
-                        projectList
+                    // Un solo scroll para encabezado y lista. Antes el
+                    // encabezado quedaba fijo afuera y en apaisado se comía
+                    // media pantalla mientras la lista scrolleaba debajo.
+                    ScrollView {
+                        VStack(spacing: isLandscape ? 14 : 22) {
+                            header(isLandscape: isLandscape)
+
+                            if store.projects.isEmpty {
+                                emptyState
+                            } else {
+                                projectList
+                            }
+                        }
+                        .padding(.horizontal, 22)
+                        .padding(.top, isLandscape ? 6 : 18)
+                        .padding(.bottom, 20)
                     }
-
-                    Spacer(minLength: 0)
                 }
-                .padding(.horizontal, 22)
-                .padding(.top, 18)
             }
             .navigationTitle("Proyectos")
             .navigationBarTitleDisplayMode(.inline)
@@ -57,23 +65,31 @@ struct ProjectListView: View {
         .tint(StitchColors.terracotta)
     }
 
-    private var header: some View {
-        VStack(spacing: 14) {
+    private func header(isLandscape: Bool) -> some View {
+        VStack(spacing: isLandscape ? 10 : 14) {
             VStack(spacing: 6) {
                 Text("StitchCounter")
-                    .font(.system(size: 34, weight: .bold, design: .rounded))
+                    .font(.system(
+                        size: isLandscape ? 24 : 34,
+                        weight: .bold,
+                        design: .rounded
+                    ))
                     .foregroundColor(StitchColors.text)
 
-                Text("Proyectos")
-                    .font(.system(size: 17, weight: .medium, design: .rounded))
-                    .foregroundColor(StitchColors.secondaryText)
+                // La barra de navegación ya dice "Proyectos"; de costado el
+                // alto vale más que repetirlo.
+                if !isLandscape {
+                    Text("Proyectos")
+                        .font(.system(size: 17, weight: .medium, design: .rounded))
+                        .foregroundColor(StitchColors.secondaryText)
+                }
             }
 
             Button(action: addProject) {
                 Label("Agregar proyecto", systemImage: "plus")
                     .font(.system(size: 17, weight: .semibold, design: .rounded))
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
+                    .padding(.vertical, isLandscape ? 10 : 14)
                     .background(StitchColors.dustyRose)
                     .foregroundColor(.white)
                     .cornerRadius(18)
@@ -83,19 +99,17 @@ struct ProjectListView: View {
     }
 
     private var projectList: some View {
-        ScrollView {
-            LazyVStack(spacing: 14) {
-                ForEach(store.projects) { project in
-                    ProjectRow(
-                        project: project,
-                        deleteAction: {
-                            projectPendingDeletion = project
-                        }
-                    )
-                }
+        LazyVStack(spacing: 14) {
+            ForEach(store.projects) { project in
+                ProjectRow(
+                    project: project,
+                    deleteAction: {
+                        projectPendingDeletion = project
+                    }
+                )
             }
-            .padding(.vertical, 2)
         }
+        .padding(.vertical, 2)
     }
 
     private var emptyState: some View {
