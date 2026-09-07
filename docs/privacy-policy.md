@@ -3,34 +3,45 @@ title: Politica de privacidad de StitchCounter
 permalink: /privacy-policy/
 ---
 
-# Politica de privacidad de StitchCounter
+# Política de privacidad de StitchCounter
 
-Ultima actualizacion: 28 de julio de 2026
+Última actualización: 7 de septiembre de 2026
 
-StitchCounter es una aplicacion movil para llevar contadores de tejido, como
-vueltas, puntos y nombres de proyectos. La aplicacion no requiere crear una
-cuenta, no muestra publicidad y no usa herramientas de analitica de terceros.
+StitchCounter es una aplicación para llevar contadores de tejido —vueltas,
+puntos y nombres de proyectos— en iPhone y Apple Watch. No requiere crear una
+cuenta, no muestra publicidad y no usa herramientas de analítica de terceros.
 
-## Datos que guarda la aplicacion
+## Datos que guarda la aplicación
 
-StitchCounter guarda en el dispositivo la informacion que ingresas en la
-aplicacion:
+StitchCounter guarda en el dispositivo la información que ingresás en la
+aplicación:
 
 - nombres de proyectos;
 - cantidad de vueltas y puntos;
 - nombres personalizados de contadores.
 
-Estos datos se guardan localmente en el almacenamiento de la aplicacion en tu
-dispositivo. StitchCounter no envia estos datos a servidores del desarrollador.
+Estos datos se guardan en el almacenamiento de la aplicación en tu dispositivo.
+StitchCounter no los envía a servidores del desarrollador ni a terceros.
+
+## Sincronización entre tu iPhone y tu Apple Watch
+
+Si usás la aplicación en los dos dispositivos, tus proyectos y contadores se
+sincronizan entre ellos para que veas los mismos datos en cualquiera de los
+dos. Esa sincronización usa Watch Connectivity, el mecanismo del propio
+sistema operativo para comunicar un iPhone con su Apple Watch emparejado.
+
+Los datos viajan directamente entre tus dispositivos. No pasan por servidores
+del desarrollador, no se guardan en la nube y no salen del par de dispositivos
+que tenés emparejados.
 
 ## Datos que no recopilamos
 
 StitchCounter no recopila ni solicita:
 
-- nombre, correo electronico, numero de telefono o direccion;
-- ubicacion precisa;
+- nombre, correo electrónico, número de teléfono o dirección;
+- ubicación;
 - contactos, fotos, archivos o calendario;
-- identificadores de publicidad o datos de analitica;
+- identificadores de publicidad o datos de analítica;
 - datos de pago.
 
 ## Permisos
@@ -40,31 +51,32 @@ funcionalidad principal.
 
 ## Servicios de terceros
 
-La aplicacion se distribuye a traves de Google Play. Google Play y el sistema
-operativo del dispositivo pueden procesar informacion tecnica, de instalacion o
-diagnostico de acuerdo con sus propias politicas. La aplicacion StitchCounter no
-integra publicidad, analitica ni servicios externos para procesar los datos que
-guardas en la app.
+La aplicación se distribuye a través del App Store. Apple y el sistema
+operativo del dispositivo pueden procesar información técnica, de instalación o
+diagnóstico de acuerdo con sus propias políticas. StitchCounter no integra
+publicidad, analítica ni servicios externos para procesar los datos que guardás
+en la app.
 
-## Retencion y eliminacion de datos
+## Retención y eliminación de datos
 
 Los datos permanecen en tu dispositivo hasta que los borres dentro de la
-aplicacion, borres los datos de la aplicacion desde Android o desinstales
-StitchCounter. Como los datos no se envian a servidores del desarrollador, no
-existe una copia remota que el desarrollador pueda eliminar.
+aplicación o desinstales StitchCounter. Desinstalar la app del iPhone o del
+Apple Watch elimina los datos guardados en ese dispositivo. Como los datos no se
+envían a servidores del desarrollador, no existe una copia remota que el
+desarrollador pueda eliminar.
 
 ## Privacidad de menores
 
-StitchCounter no esta dirigida especificamente a menores y no recopila
-deliberadamente informacion personal de menores.
+StitchCounter no está dirigida específicamente a menores y no recopila
+deliberadamente información personal de menores.
 
-## Cambios en esta politica
+## Cambios en esta política
 
-Esta politica puede actualizarse si cambia la funcionalidad de la aplicacion o
-la forma en que se manejan los datos. La fecha de la ultima actualizacion se
-mantendra visible al inicio de esta pagina.
+Esta política puede actualizarse si cambia la funcionalidad de la aplicación o
+la forma en que se manejan los datos. La fecha de la última actualización se
+mantendrá visible al inicio de esta página.
 
 ## Contacto
 
-Para consultas sobre esta politica, podes abrir un issue en
+Para consultas sobre esta política, podés abrir un issue en
 [GitHub](https://github.com/Huanel/StitchCounter/issues).
