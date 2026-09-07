@@ -23,14 +23,25 @@ struct ProjectDetailView: View {
                 missingProjectView
             }
         }
-        // De costado la barra ya está ahí ocupando alto, con el chevron y el
-        // deshacer en las puntas y el medio vacío. El nombre va ahí: llena ese
-        // hueco y le devuelve a los contadores todo el alto del contenido.
-        .navigationTitle(isLandscape ? (store.project(id: projectID)?.displayName ?? "") : "")
         .navigationBarTitleDisplayMode(.inline)
         .keepsScreenAwake()
         .onAppear(perform: Haptics.prepare)
         .toolbar {
+            // De costado la barra ya ocupa alto con el chevron y el deshacer en
+            // las puntas y el medio vacío, así que el nombre va ahí. Va como
+            // ítem principal y no como navigationTitle porque el título del
+            // sistema queda diminuto: acá lleva el tamaño y la tipografía
+            // redondeada del resto de la app.
+            if isLandscape {
+                ToolbarItem(placement: .principal) {
+                    Text(store.project(id: projectID)?.displayName ?? "")
+                        .font(.system(size: 20, weight: .semibold, design: .rounded))
+                        .foregroundColor(StitchColors.text)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.7)
+                }
+            }
+
             ToolbarItem(placement: .navigationBarTrailing) {
                 UndoButton()
             }

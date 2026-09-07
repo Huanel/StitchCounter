@@ -15,6 +15,7 @@
 		481E3CF92FEB33F10029580E /* StitchCounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CF82FEB33F10029580E /* StitchCounterUITests.swift */; };
 		481E3CFB2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481E3CFA2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift */; };
 		48C0AD012FEC0100002958AA /* ScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA042FEC0100002958AA /* ScreenshotTests.swift */; };
+		48C0AD032FEC0100002958AA /* RotationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA072FEC0100002958AA /* RotationTests.swift */; };
 		48B100022FEBF0000029580E /* StitchProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100012FEBF0000029580E /* StitchProject.swift */; };
 		48B100042FEBF0000029580E /* ProjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100032FEBF0000029580E /* ProjectStore.swift */; };
 		48B100062FEBF0000029580E /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100052FEBF0000029580E /* ProjectListView.swift */; };
@@ -96,6 +97,7 @@
 		48C0AA032FEC0100002958AA /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		48C0AA042FEC0100002958AA /* ScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTests.swift; sourceTree = "<group>"; };
 		48C0AA052FEC0100002958AA /* StitchColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchColors.swift; sourceTree = "<group>"; };
+		48C0AA072FEC0100002958AA /* RotationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				481E3CF82FEB33F10029580E /* StitchCounterUITests.swift */,
 				481E3CFA2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift */,
 				48C0AA042FEC0100002958AA /* ScreenshotTests.swift */,
+				48C0AA072FEC0100002958AA /* RotationTests.swift */,
 			);
 			path = StitchCounterUITests;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				481E3CFB2FEB33F10029580E /* StitchCounterUITestsLaunchTests.swift in Sources */,
 				481E3CF92FEB33F10029580E /* StitchCounterUITests.swift in Sources */,
 				48C0AD012FEC0100002958AA /* ScreenshotTests.swift in Sources */,
+				48C0AD032FEC0100002958AA /* RotationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

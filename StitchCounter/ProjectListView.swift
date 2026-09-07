@@ -5,32 +5,38 @@ struct ProjectListView: View {
     @State private var path: [StitchProject.ID] = []
     @State private var projectPendingDeletion: StitchProject?
 
+    /// En iPhone el alto compacto significa apaisado.
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+
+    private var isLandscape: Bool { verticalSizeClass == .compact }
+
     var body: some View {
         NavigationStack(path: $path) {
             ZStack {
                 StitchColors.background
                     .ignoresSafeArea()
 
-                GeometryReader { proxy in
-                    let isLandscape = proxy.size.width > proxy.size.height
+                // Un solo scroll para encabezado y lista: antes el encabezado
+                // quedaba fijo afuera y en apaisado se comía media pantalla.
+                //
+                // Sin GeometryReader a propósito. Envolviendo este ScrollView,
+                // al rotar cambiaba la geometría y el LazyVStack de adentro
+                // soltaba sus celdas sin volver a crearlas: las filas quedaban
+                // en blanco. El size class del entorno responde lo mismo sin
+                // medir nada.
+                ScrollView {
+                    VStack(spacing: isLandscape ? 14 : 22) {
+                        header(isLandscape: isLandscape)
 
-                    // Un solo scroll para encabezado y lista. Antes el
-                    // encabezado quedaba fijo afuera y en apaisado se comía
-                    // media pantalla mientras la lista scrolleaba debajo.
-                    ScrollView {
-                        VStack(spacing: isLandscape ? 14 : 22) {
-                            header(isLandscape: isLandscape)
-
-                            if store.projects.isEmpty {
-                                emptyState
-                            } else {
-                                projectList
-                            }
+                        if store.projects.isEmpty {
+                            emptyState
+                        } else {
+                            projectList
                         }
-                        .padding(.horizontal, 22)
-                        .padding(.top, isLandscape ? 6 : 18)
-                        .padding(.bottom, 20)
                     }
+                    .padding(.horizontal, 22)
+                    .padding(.top, isLandscape ? 6 : 18)
+                    .padding(.bottom, 20)
                 }
             }
             .navigationTitle("Proyectos")
