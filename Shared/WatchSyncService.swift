@@ -103,6 +103,15 @@ extension WatchSyncService: WCSessionDelegate {
     }
 
 #if os(iOS)
+    /// Se dispara cuando el reloj se empareja o cuando recién se instala la app
+    /// en él. Sin esto, un reloj al que le acaban de instalar la app no recibe
+    /// nada hasta que edites algo en el teléfono: en la activación anterior el
+    /// envío falló porque todavía no había app del otro lado.
+    func sessionWatchStateDidChange(_ session: WCSession) {
+        guard session.activationState == .activated else { return }
+        notifyReady()
+    }
+
     func sessionDidBecomeInactive(_ session: WCSession) {}
 
     func sessionDidDeactivate(_ session: WCSession) {

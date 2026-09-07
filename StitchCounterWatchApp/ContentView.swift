@@ -107,7 +107,7 @@ private struct WatchProjectView: View {
                     WatchCounterView(
                         title: project.displayRowCounterName,
                         value: project.rowCount,
-                        tint: .pink,
+                        tint: StitchColors.dustyRose,
                         minusAction: { store.adjustRowCount(for: projectID, by: -1) },
                         plusAction: { store.adjustRowCount(for: projectID, by: 1) },
                         resetAction: { resetTarget = .rows }
@@ -116,7 +116,7 @@ private struct WatchProjectView: View {
                     WatchCounterView(
                         title: project.displayStitchCounterName,
                         value: project.stitchCount,
-                        tint: .green,
+                        tint: StitchColors.sage,
                         minusAction: { store.adjustStitchCount(for: projectID, by: -1) },
                         plusAction: { store.adjustStitchCount(for: projectID, by: 1) },
                         resetAction: { resetTarget = .stitches }
@@ -200,48 +200,79 @@ private struct WatchCounterView: View {
     let resetAction: () -> Void
 
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(spacing: 7) {
+            // La pagina del TabView llega hasta el borde superior, debajo de la
+            // barra con el nombre del proyecto. Este aire evita que el titulo
+            // del contador quede pisado por ella.
+            Spacer(minLength: 22)
+
             Text(title)
                 .font(.headline)
+                .foregroundStyle(StitchColors.softTerracotta)
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
 
             Text(value.formatted())
-                .font(.system(size: 52, weight: .bold, design: .rounded))
+                .font(.system(size: 44, weight: .bold, design: .rounded))
                 .monospacedDigit()
                 .minimumScaleFactor(0.5)
                 .lineLimit(1)
                 .accessibilityLabel("\(title): \(value)")
 
-            HStack(spacing: 10) {
-                Button {
+            HStack(spacing: 12) {
+                CircleButton(symbol: "minus", fill: StitchColors.lavender, ink: StitchColors.text) {
                     guard value > 0 else {
                         WKInterfaceDevice.current().play(.failure)
                         return
                     }
                     minusAction()
                     WKInterfaceDevice.current().play(.click)
-                } label: {
-                    Image(systemName: "minus")
                 }
                 .accessibilityLabel("Restar \(title.lowercased())")
 
-                Button {
+                CircleButton(symbol: "plus", fill: tint, ink: .white) {
                     plusAction()
                     WKInterfaceDevice.current().play(.click)
-                } label: {
-                    Image(systemName: "plus")
                 }
-                .tint(tint)
                 .accessibilityLabel("Sumar \(title.lowercased())")
             }
 
             Button(action: resetAction) {
                 Image(systemName: "arrow.counterclockwise")
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(StitchColors.text)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 6)
+                    .background(StitchColors.softTerracotta)
+                    .clipShape(Capsule())
             }
-            .font(.footnote)
+            .buttonStyle(.plain)
             .accessibilityLabel("Reiniciar \(title.lowercased())")
+
+            Spacer(minLength: 4)
         }
-        .padding(.horizontal)
+        .padding(.horizontal, 10)
+    }
+}
+
+/// Boton redondo y solido, el mismo gesto visual que los del iPhone. En watchOS
+/// `.tint` solo pinta el glifo de un boton con borde, no su relleno, asi que el
+/// color de la app se pone a mano.
+private struct CircleButton: View {
+    let symbol: String
+    let fill: Color
+    let ink: Color
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: symbol)
+                .font(.system(size: 19, weight: .bold))
+                .frame(width: 46, height: 46)
+                .background(fill)
+                .foregroundStyle(ink)
+                .clipShape(Circle())
+        }
+        .buttonStyle(.plain)
     }
 }

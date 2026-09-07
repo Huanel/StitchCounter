@@ -25,6 +25,8 @@
 		48E6CF032FEB8853008A3CC6 /* StitchCounterWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 48E6CEF92FEB8853008A3CC6 /* StitchCounterWatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		48C0AB012FEC0100002958AA /* ProjectSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA012FEC0100002958AA /* ProjectSync.swift */; };
 		48C0AB032FEC0100002958AA /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA032FEC0100002958AA /* Haptics.swift */; };
+		48C0AB042FEC0100002958AA /* StitchColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA052FEC0100002958AA /* StitchColors.swift */; };
+		48C0AC052FEC0100002958AA /* StitchColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA052FEC0100002958AA /* StitchColors.swift */; };
 		48C0AB022FEC0100002958AA /* WatchSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0AA022FEC0100002958AA /* WatchSyncService.swift */; };
 		48C0AC012FEC0100002958AA /* StitchProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100012FEBF0000029580E /* StitchProject.swift */; };
 		48C0AC022FEC0100002958AA /* ProjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B100032FEBF0000029580E /* ProjectStore.swift */; };
@@ -93,6 +95,7 @@
 		48C0AA022FEC0100002958AA /* WatchSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSyncService.swift; sourceTree = "<group>"; };
 		48C0AA032FEC0100002958AA /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
 		48C0AA042FEC0100002958AA /* ScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTests.swift; sourceTree = "<group>"; };
+		48C0AA052FEC0100002958AA /* StitchColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StitchColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,7 @@
 				48B100032FEBF0000029580E /* ProjectStore.swift */,
 				48C0AA012FEC0100002958AA /* ProjectSync.swift */,
 				48C0AA022FEC0100002958AA /* WatchSyncService.swift */,
+				48C0AA052FEC0100002958AA /* StitchColors.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -385,6 +389,7 @@
 				48C0AB012FEC0100002958AA /* ProjectSync.swift in Sources */,
 				48C0AB022FEC0100002958AA /* WatchSyncService.swift in Sources */,
 				48C0AB032FEC0100002958AA /* Haptics.swift in Sources */,
+				48C0AB042FEC0100002958AA /* StitchColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +421,7 @@
 				48C0AC022FEC0100002958AA /* ProjectStore.swift in Sources */,
 				48C0AC032FEC0100002958AA /* ProjectSync.swift in Sources */,
 				48C0AC042FEC0100002958AA /* WatchSyncService.swift in Sources */,
+				48C0AC052FEC0100002958AA /* StitchColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
