@@ -24,6 +24,11 @@ struct ProjectDetailView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
+        // Sin fondo de barra: al scrollear, iOS le pone un material
+        // difuminado y una línea divisoria, y esa franja corta el crema.
+        // Oculto, el fondo de la app sigue de largo y los botones —que traen
+        // su propia cápsula— se leen igual sobre el contenido.
+        .toolbarBackground(.hidden, for: .navigationBar)
         .keepsScreenAwake()
         .onAppear(perform: Haptics.prepare)
         .toolbar {
