@@ -39,7 +39,9 @@ struct ProjectListView: View {
                     .padding(.bottom, 20)
                 }
             }
-            .navigationTitle("Proyectos")
+            // Sin título en la barra: el encabezado ya dice "StitchCounter" y
+            // "Proyectos" justo debajo, y repetirlo arriba solo agrega una
+            // franja más en una pantalla que se lee de un vistazo.
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
